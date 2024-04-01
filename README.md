@@ -4,3 +4,6 @@
 
 ### Видеозапись игры brain-even
 https://asciinema.org/a/tgJx7Hhz8t9dkosjNHGrH4Emb
+
+### Видеозапись игры brain-calc
+https://asciinema.org/a/BQjON7ytxBOlZDq2eIZj5GcwD
