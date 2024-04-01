@@ -7,3 +7,6 @@ https://asciinema.org/a/tgJx7Hhz8t9dkosjNHGrH4Emb
 
 ### Видеозапись игры brain-calc
 https://asciinema.org/a/BQjON7ytxBOlZDq2eIZj5GcwD
+
+### Видеозапись игры brain-gcd
+https://asciinema.org/a/RJyTUJ8cUej8ZH426GOa5NaYe

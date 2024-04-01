@@ -1,3 +1,3 @@
 export default function getRandomNumber() {
-  return Math.round(Math.random() * 15);
+  return Math.round(Math.random() * 100);
 }
