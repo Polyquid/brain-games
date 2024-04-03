@@ -17,7 +17,7 @@ function oneGame() {
   const resIndex = Math.round(Math.random() * (currentExpression.length - 1));
   const correctAnswer = currentExpression[resIndex];
   currentExpression[resIndex] = '..';
-  console.log(`Question: ${currentExpression.join()}`);
+  console.log(`Question: ${currentExpression.join(' ')}`);
   const currentAnswer = getAnswer();
   const isTrueAnswer = correctAnswer === +currentAnswer;
   if (isTrueAnswer) {
