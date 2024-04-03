@@ -10,3 +10,6 @@ https://asciinema.org/a/byvfkomvzqK0DbnAEH3z7BbEe
 
 ### Видеозапись игры brain-gcd
 https://asciinema.org/a/BhTm8Qhon9Lb8XtzE5Cr5vOIE
+
+### Видеозапись игры brain-progression
+https://asciinema.org/a/36UyGQIW1r05JsStIsfgQ8Onj
