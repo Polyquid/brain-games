@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import oneGame from '../src/games/brain-calc.js';
+import brainCalc from '../src/games/brainCalc.js';
 import greeting from '../src/cli.js';
 import game from '../src/index.js';
 
-const name = greeting();
+const userName = greeting();
 console.log('What is the result of the expression?');
-game(name, oneGame);
+game(userName, brainCalc);

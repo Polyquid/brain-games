@@ -7,19 +7,19 @@ function getProgression() {
   const result = [];
   for (let i = 0; i < 10; i += 1) {
     const currentNumber = firstItem + iteration * i;
-    result.push(currentNumber);
+    result.push(`${currentNumber}`);
   }
   return result;
 }
 
-function oneGame() {
+function brainProgression() {
   const currentExpression = getProgression();
   const resIndex = Math.round(Math.random() * (currentExpression.length - 1));
   const correctAnswer = currentExpression[resIndex];
   currentExpression[resIndex] = '..';
   console.log(`Question: ${currentExpression.join(' ')}`);
   const currentAnswer = getAnswer();
-  const isTrueAnswer = correctAnswer === +currentAnswer;
+  const isTrueAnswer = correctAnswer === currentAnswer;
   if (isTrueAnswer) {
     console.log('Correct !');
   } else {
@@ -28,4 +28,4 @@ function oneGame() {
   return isTrueAnswer;
 }
 
-export default oneGame;
+export default brainProgression;

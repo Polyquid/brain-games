@@ -12,7 +12,7 @@ function isPrime(number) {
   return res;
 }
 
-function oneGame() {
+function brainPrime() {
   const currentNumber = getRandomNumber();
   const correctAnswer = isPrime(currentNumber);
   console.log(`Question: ${currentNumber}`);
@@ -26,4 +26,4 @@ function oneGame() {
   return isTrueAnswer;
 }
 
-export default oneGame;
+export default brainPrime;

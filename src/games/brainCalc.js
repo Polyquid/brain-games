@@ -7,26 +7,16 @@ const mapping = {
   '*': (a, b) => a * b,
 };
 
-function checkAnswer(correctAnswer, currentAnswer) {
-  let result;
-  if (correctAnswer === currentAnswer) {
-    result = true;
-  } else {
-    result = false;
-  }
-  return result;
-}
-
-function oneGame() {
+function brainCalc() {
   const firstOperand = getRandomNumber();
+  const secondOperand = getRandomNumber();
   const operators = Object.keys(mapping);
   const operator = operators[Math.round(Math.random()) * (operators.length - 1)];
-  const secondOperand = getRandomNumber();
   const currentExpression = `${firstOperand} ${operator} ${secondOperand}`;
   const correctAnswer = mapping[operator](firstOperand, secondOperand);
   console.log(`Question: ${currentExpression}`);
   const currentAnswer = getAnswer();
-  const isTrueAnswer = checkAnswer(correctAnswer, +currentAnswer);
+  const isTrueAnswer = correctAnswer === +currentAnswer;
   if (isTrueAnswer) {
     console.log('Correct !');
   } else {
@@ -35,4 +25,4 @@ function oneGame() {
   return isTrueAnswer;
 }
 
-export default oneGame;
+export default brainCalc;

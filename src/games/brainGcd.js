@@ -36,7 +36,7 @@ function checkAnswer(correctAnswer, currentAnswer) {
   return result;
 }
 
-function oneGame() {
+function brainGcd() {
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
   const currentExpression = `${firstNumber} ${secondNumber}`;
@@ -52,4 +52,4 @@ function oneGame() {
   return isTrueAnswer;
 }
 
-export default oneGame;
+export default brainGcd;

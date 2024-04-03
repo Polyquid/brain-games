@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import oneGame from '../src/games/brain-even.js';
+import brainEven from '../src/games/brainEven.js';
 import greeting from '../src/cli.js';
 import game from '../src/index.js';
 
-const name = greeting();
+const userName = greeting();
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
-game(name, oneGame);
+game(userName, brainEven);
