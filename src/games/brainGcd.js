@@ -1,4 +1,3 @@
-import getAnswer from '../simple modules/getAnswer.js';
 import getRandomNumber from '../simple modules/getRandomNumber.js';
 
 function getCorrectAnswer(a, b) {
@@ -23,33 +22,16 @@ function getCorrectAnswer(a, b) {
       minNumber = remain;
     }
   }
-  return result;
+  return `${result}`;
 }
 
-function checkAnswer(correctAnswer, currentAnswer) {
-  let result;
-  if (correctAnswer === currentAnswer) {
-    result = true;
-  } else {
-    result = false;
-  }
-  return result;
-}
-
-function brainGcd() {
+function getDataGcd() {
+  const gameDescription = 'Find the greatest common divisor of given numbers.';
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
   const currentExpression = `${firstNumber} ${secondNumber}`;
   const correctAnswer = getCorrectAnswer(firstNumber, secondNumber);
-  console.log(`Question: ${currentExpression}`);
-  const currentAnswer = getAnswer();
-  const isTrueAnswer = checkAnswer(correctAnswer, +currentAnswer);
-  if (isTrueAnswer) {
-    console.log('Correct !');
-  } else {
-    console.log(`'${currentAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  }
-  return isTrueAnswer;
+  return { currentExpression, correctAnswer, gameDescription };
 }
 
-export default brainGcd;
+export default getDataGcd;

@@ -1,4 +1,3 @@
-import getAnswer from '../simple modules/getAnswer.js';
 import getRandomNumber from '../simple modules/getRandomNumber.js';
 
 function isPrime(number) {
@@ -12,18 +11,11 @@ function isPrime(number) {
   return res;
 }
 
-function brainPrime() {
-  const currentNumber = getRandomNumber();
-  const correctAnswer = isPrime(currentNumber);
-  console.log(`Question: ${currentNumber}`);
-  const currentAnswer = getAnswer();
-  const isTrueAnswer = currentAnswer === correctAnswer;
-  if (isTrueAnswer) {
-    console.log('Correct !');
-  } else {
-    console.log(`'${currentAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  }
-  return isTrueAnswer;
+function getDataPrime() {
+  const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const currentExpression = getRandomNumber();
+  const correctAnswer = isPrime(currentExpression);
+  return { currentExpression, correctAnswer, gameDescription };
 }
 
-export default brainPrime;
+export default getDataPrime;

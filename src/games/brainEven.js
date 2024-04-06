@@ -1,18 +1,10 @@
-import getAnswer from '../simple modules/getAnswer.js';
 import getRandomNumber from '../simple modules/getRandomNumber.js';
 
-function brainEven() {
-  const currentNumber = getRandomNumber();
-  console.log(`Question: ${currentNumber}`);
-  const correctAnswer = currentNumber % 2 === 0 ? 'yes' : 'no';
-  const currentAnswer = getAnswer();
-  const isTrueAnswer = correctAnswer === currentAnswer;
-  if (isTrueAnswer) {
-    console.log('Correct!');
-  } else {
-    console.log(`'${currentAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  }
-  return isTrueAnswer;
+function getDataEven() {
+  const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const currentExpression = getRandomNumber();
+  const correctAnswer = currentExpression % 2 === 0 ? 'yes' : 'no';
+  return { currentExpression, correctAnswer, gameDescription };
 }
 
-export default brainEven;
+export default getDataEven;
