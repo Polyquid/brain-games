@@ -13,10 +13,11 @@ function getProgression() {
 
 function getDataProgression() {
   const gameDescription = 'What number is missing in the progression?';
-  const currentExpression = getProgression();
+  let currentExpression = getProgression();
   const resIndex = Math.round(Math.random() * (currentExpression.length - 1));
   const correctAnswer = currentExpression[resIndex];
   currentExpression[resIndex] = '..';
+  currentExpression = currentExpression.join(' ');
   return { currentExpression, correctAnswer, gameDescription };
 }
 
