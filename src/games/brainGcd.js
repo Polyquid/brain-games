@@ -1,37 +1,22 @@
-import getRandomNumber from '../simple modules/getRandomNumber.js';
+import generateRandomNumber from '../simple-modules/generateRandomNumber.js';
+import playGame from '../index.js';
+
+const gameDescription = 'Find the greatest common divisor of given numbers.';
 
 function getCorrectAnswer(a, b) {
-  let maxNumber;
-  let minNumber;
-  if (a > b) {
-    maxNumber = a;
-    minNumber = b;
-  } else {
-    maxNumber = b;
-    minNumber = a;
-  }
-  let isNotFinish = true;
-  let result;
-  while (isNotFinish) {
-    const remain = maxNumber % minNumber;
-    if (remain === 0) {
-      result = minNumber;
-      isNotFinish = false;
-    } else {
-      maxNumber = minNumber;
-      minNumber = remain;
-    }
-  }
-  return `${result}`;
+  if (a < b) return getCorrectAnswer(b, a);
+  if (a % b === 0) return `${b}`;
+  return getCorrectAnswer(b, a % b);
 }
 
 function getDataGcd() {
-  const gameDescription = 'Find the greatest common divisor of given numbers.';
-  const firstNumber = getRandomNumber();
-  const secondNumber = getRandomNumber();
+  const firstNumber = generateRandomNumber();
+  const secondNumber = generateRandomNumber();
   const currentExpression = `${firstNumber} ${secondNumber}`;
   const correctAnswer = getCorrectAnswer(firstNumber, secondNumber);
-  return { currentExpression, correctAnswer, gameDescription };
+  return { currentExpression, correctAnswer };
 }
 
-export default getDataGcd;
+export default () => {
+  playGame(getDataGcd, gameDescription);
+};

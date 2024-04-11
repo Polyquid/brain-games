@@ -1,4 +1,7 @@
-import getRandomNumber from '../simple modules/getRandomNumber.js';
+import generateRandomNumber from '../simple-modules/generateRandomNumber.js';
+import playGame from '../index.js';
+
+const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function isPrime(number) {
   let res = 'yes';
@@ -12,10 +15,11 @@ function isPrime(number) {
 }
 
 function getDataPrime() {
-  const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const currentExpression = getRandomNumber();
+  const currentExpression = generateRandomNumber();
   const correctAnswer = isPrime(currentExpression);
-  return { currentExpression, correctAnswer, gameDescription };
+  return { currentExpression, correctAnswer };
 }
 
-export default getDataPrime;
+export default () => {
+  playGame(getDataPrime, gameDescription);
+};

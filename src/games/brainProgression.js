@@ -1,8 +1,11 @@
-import getRandomNumber from '../simple modules/getRandomNumber.js';
+import generateRandomNumber from '../simple-modules/generateRandomNumber.js';
+import playGame from '../index.js';
 
-function getProgression() {
-  const firstItem = getRandomNumber();
-  const iteration = getRandomNumber();
+const gameDescription = 'What number is missing in the progression?';
+
+function createProgression() {
+  const firstItem = generateRandomNumber();
+  const iteration = generateRandomNumber();
   const result = [];
   for (let i = 0; i < 10; i += 1) {
     const currentNumber = firstItem + iteration * i;
@@ -12,13 +15,14 @@ function getProgression() {
 }
 
 function getDataProgression() {
-  const gameDescription = 'What number is missing in the progression?';
-  let currentExpression = getProgression();
+  let currentExpression = createProgression();
   const resIndex = Math.round(Math.random() * (currentExpression.length - 1));
   const correctAnswer = currentExpression[resIndex];
   currentExpression[resIndex] = '..';
   currentExpression = currentExpression.join(' ');
-  return { currentExpression, correctAnswer, gameDescription };
+  return { currentExpression, correctAnswer };
 }
 
-export default getDataProgression;
+export default () => {
+  playGame(getDataProgression, gameDescription);
+};
