@@ -8,7 +8,7 @@ export default function playGame(getDataGame, gameDescription) {
   console.log(gameDescription);
   for (let i = 0; i < countOfRounds; i += 1) {
     const { currentExpression, correctAnswer } = getDataGame();
-    console.log(`Question: ${currentExpression} ${correctAnswer}`);
+    console.log(`Question: ${currentExpression}`);
     const currentAnswer = getAnswer();
     if (currentAnswer === correctAnswer) {
       console.log('Correct !');
